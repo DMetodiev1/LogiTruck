@@ -276,29 +276,30 @@
             </div>
 
             <!-- Формата с FormSubmit.co – без регистрация -->
-			<form class="contact-form"
+<form class="contact-form"
       action="https://formsubmit.co/metodiev@lumina-88.com"
       method="POST">
 
-    <!-- Защита от спам (ботове попълват това поле) -->
-    <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" />
+    <!-- Защита от ботове (препоръчително) -->
+    <input type="text" name="_honey" style="display:none !important;" tabindex="-1" autocomplete="off" />
 
-    <!-- Тема на писмото, която ще видиш в имейла -->
+    <!-- Тема на имейла -->
     <input type="hidden" name="_subject" value="Запитване от сайта LogiTruck">
 
-    <!-- Къде да отиде потребителят след успешно изпращане -->
+    <!-- Пренасочване след успех -->
     <input type="hidden" name="_next" value="https://dmietodiev1.github.io/thank-you.html">
 
+    <!-- Полета с ясно required и name -->
     <div class="form-group">
-        <input type="text" name="name" placeholder="Вашето име *" required>
+        <input type="text" name="name" placeholder="Вашето име *" required autocomplete="name">
     </div>
 
     <div class="form-group">
-        <input type="email" name="email" placeholder="Вашият email *" required>
+        <input type="email" name="email" placeholder="Вашият email *" required autocomplete="email">
     </div>
 
     <div class="form-group">
-        <input type="tel" name="phone" placeholder="Телефон (незадължителен)">
+        <input type="tel" name="phone" placeholder="Телефон (незадължителен)" autocomplete="tel">
     </div>
 
     <div class="form-group">
@@ -307,8 +308,7 @@
 
     <button type="submit" class="btn-primary">Изпратете съобщение</button>
 </form>
-          
-        </div>
+		</div>
     </div>
 </section>
 
@@ -329,3 +329,4 @@
 </body>
 
 </html>
+
