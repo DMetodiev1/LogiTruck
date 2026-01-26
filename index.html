@@ -276,43 +276,41 @@
             </div>
 
             <!-- Формата с FormSubmit.co – без регистрация -->
-            <form class="contact-form"
-                  action="https://formsubmit.co/metodiev@lumina-88.com"
-                  method="POST">
+			<form class="contact-form"
+      action="https://formsubmit.co/metodiev@lumina-88.com"
+      method="POST">
 
-                <!-- Скрито поле за спам защита (препоръчително) -->
-                <input type="text" name="_gotcha" style="display:none" />
+    <!-- Защита от спам (ботове попълват това поле) -->
+    <input type="text" name="_gotcha" style="display:none !important;" tabindex="-1" autocomplete="off" />
 
-                <!-- Тема на писмото (много полезно) -->
-                <input type="hidden" name="_subject" value="Ново запитване от сайта LogiTruck">
+    <!-- Тема на писмото, която ще видиш в имейла -->
+    <input type="hidden" name="_subject" value="Запитване от сайта LogiTruck">
 
-                <!-- Къде да пренасочи след успешно изпращане (създай thank-you.html) -->
-                <input type="hidden" name="_next" value="https://твоят-домен.com/thank-you.html">
+    <!-- Къде да отиде потребителят след успешно изпращане -->
+    <input type="hidden" name="_next" value="https://dmietodiev1.github.io/thank-you.html">
 
-                <!-- Опционално: изключи reCAPTCHA ако не ти трябва -->
-                <!-- <input type="hidden" name="_captcha" value="false"> -->
+    <div class="form-group">
+        <input type="text" name="name" placeholder="Вашето име *" required>
+    </div>
 
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Вашето име" required>
-                </div>
-                <div class="form-group">
-                    <input type="email" name="email" placeholder="Email адрес" required>
-                </div>
-                <div class="form-group">
-                    <input type="tel" name="phone" placeholder="Телефон">
-                </div>
-                <div class="form-group">
-                    <textarea name="message" placeholder="Вашето съобщение" rows="5" required></textarea>
-                </div>
+    <div class="form-group">
+        <input type="email" name="email" placeholder="Вашият email *" required>
+    </div>
 
-                <button type="submit" class="btn-primary">Изпратете съобщение</button>
-            </form>
+    <div class="form-group">
+        <input type="tel" name="phone" placeholder="Телефон (незадължителен)">
+    </div>
+
+    <div class="form-group">
+        <textarea name="message" placeholder="Вашето съобщение *" rows="5" required></textarea>
+    </div>
+
+    <button type="submit" class="btn-primary">Изпратете съобщение</button>
+</form>
+          
         </div>
     </div>
 </section>
-
-
-	
 
     <!-- Footer -->
     <footer class="footer">
@@ -329,4 +327,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
