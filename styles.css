@@ -1,0 +1,91 @@
+/* styles.css */
+:root{
+  --bg:#0b0c0f;
+  --panel:#12141a;
+  --card:#151823;
+  --muted:#aab2c0;
+  --text:#e7ecf5;
+  --primary:#4f80ff;
+  --danger:#f05252;
+  --ok:#22c55e;
+  --warn:#f59e0b;
+  --border:#202534;
+  --shadow: 0 6px 30px rgba(0,0,0,.25);
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:radial-gradient(1200px 800px at 80% -20%, #1a2140 0%, rgba(26,33,64,0) 60%), var(--bg);
+  color:var(--text);
+}
+
+/* Header */
+.app-header{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 20px; border-bottom:1px solid var(--border); background:rgba(10,12,16,.6); backdrop-filter: blur(6px); position:sticky; top:0; z-index:10;
+}
+.brand{font-weight:700; letter-spacing:.4px}
+.actions{display:flex; gap:10px; align-items:center}
+button, .file-input{
+  border:1px solid var(--border); background:#0f1320; color:var(--text); padding:8px 12px; border-radius:8px; cursor:pointer;
+}
+button.primary{background:var(--primary); border-color:transparent}
+button.ghost{background:transparent}
+button.danger{background:var(--danger); border-color:transparent; color:white}
+.file-input{position:relative; overflow:hidden}
+.file-input input{position:absolute; inset:0; opacity:0; cursor:pointer}
+
+/* Layout */
+.layout{display:grid; grid-template-columns:280px 1fr; gap:16px; padding:16px; min-height:calc(100vh - 64px)}
+.panel{background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:14px}
+.panel h2{margin:6px 0 14px 0}
+.panel .field{display:flex; flex-direction:column; gap:6px; margin-bottom:12px}
+.panel select,.panel input{background:#0f1320; color:var(--text); border:1px solid var(--border); border-radius:8px; padding:8px}
+.panel-section{margin-top:18px}
+.reminder-list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px}
+.reminder{display:flex; justify-content:space-between; gap:12px; padding:8px; border:1px dashed var(--border); border-radius:8px; background:#0e1220}
+.reminder .when{font-weight:600}
+.reminder.ok .when{color:var(--ok)}
+.reminder.warn .when{color:var(--warn)}
+.reminder.danger .when{color:var(--danger)}
+
+.content{display:flex; flex-direction:column; gap:12px}
+.empty{opacity:.7; padding:20px}
+
+/* Cards */
+.cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:14px}
+.card{
+  background:linear-gradient(180deg, #171b28, #121621);
+  border:1px solid var(--border); border-radius:14px; padding:14px; box-shadow:var(--shadow)
+}
+.card-row{display:flex; justify-content:space-between; align-items:center; margin-bottom:8px}
+.card .title{font-weight:600}
+.card .badges{display:flex; gap:6px; flex-wrap:wrap}
+.badge{border:1px solid var(--border); padding:2px 8px; border-radius:999px; font-size:12px; color:var(--muted)}
+.meta,.dates{font-size:13px; color:var(--muted); display:flex; gap:10px; flex-wrap:wrap}
+.card-actions{display:flex; gap:8px; margin-top:10px}
+
+/* Dialogs */
+dialog{border:none; border-radius:14px; padding:0; width:min(860px,92vw); background:var(--panel); color:var(--text)}
+dialog::backdrop{background:rgba(0,0,0,.5)}
+.dialog-title{padding:12px 16px; border-bottom:1px solid var(--border)}
+.dialog-actions{padding:12px 16px; border-top:1px solid var(--border)}
+.dialog-actions menu{display:flex; gap:8px; justify-content:flex-end; margin:0; padding:0}
+.grid{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; padding:16px}
+.grid-sub{grid-template-columns:repeat(3,1fr)}
+.field.wide{grid-column:1 / -1}
+.grid input,.grid select,.grid textarea{background:#0f1320; color:var(--text); border:1px solid var(--border); border-radius:8px; padding:8px; width:100%}
+
+/* History */
+.history-list{list-style:none; margin:0; padding:12px; max-height:50vh; overflow:auto; display:flex; flex-direction:column; gap:8px}
+.history-item{display:flex; justify-content:space-between; gap:8px; padding:8px; border:1px solid var(--border); border-radius:8px; background:#0f1320}
+.history-new{display:grid; grid-template-columns:140px 1fr 120px auto; gap:8px; padding:12px}
+
+/* Responsive */
+@media (max-width: 940px){
+  .layout{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .grid-sub{grid-template-columns:1fr}
+}
